@@ -1,0 +1,14 @@
+body{
+    background-color: black;
+    font-family: 'Schoolbell', cursive;
+}
+.jumbotron{
+   text-align: center;
+}
+li{
+    margin: 2px;
+}
+.eaten{
+    margin: 1px;
+}
+
