@@ -1,25 +1,49 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Burger Line-Up</h3>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        {{>burgers/burger-block}}
+                        {{/unless}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="jumbotron">
+                <img src="/assets/images/burgerTime.jpg" alt="Burger Time" style="height: 200px;">
+                <h2><i class="fas fa-hamburger"></i> Add a Burger</h2>
+                <form class="create-form">
+                    <div>
+                       <input type="text" id="burger" name="name">
+                    </div>
+                    <button type="submit"><i class="fas fa-hamburger"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Eaten</h3>
+                </div>
+                <div class="card-body">
+                    <ol>
+                        {{#each burgers}}
+                        {{#if devoured}}
+                        <p>{{burger_name}}</p>
+                        {{/if}}
+                        {{/each}}
+                    </ol>
+                </div>
+            </div>
+        </div>
 
-<ol>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{>burgers/burger-block}}
-    {{/unless}}
-    {{/each}}
-</ol>
-
-<ol>
-    {{#each burgers}}
-    {{#if devoured}}
-   <p>{{burger_name}}</p> 
-    {{/if}}
-    {{/each}}
-</ol>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-    <div>
-        <label for="burger">Burger:</label>
-        <input type="text" id="burger" name="name">
     </div>
-    <button type="submit">Add a Burger</button>
-</form>
+</div>
